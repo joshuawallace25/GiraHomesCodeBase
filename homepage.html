@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed": "#ffddb4",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-container": "#694300",
+                        "primary": "#003820",
+                        "primary-fixed": "#b0f1c7",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#404942",
+                        "inverse-primary": "#95d4ac",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-container": "#feaa0d",
+                        "surface-tint": "#2d6a48",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline": "#707971",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed-dim": "#ffb952",
+                        "primary-container": "#0f5132",
+                        "outline-variant": "#c0c9c0",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#0f5132",
+                        "on-primary-container": "#84c39b",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "tertiary": "#303030",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#474646",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#291800",
+                        "primary-fixed-dim": "#95d4ac",
+                        "secondary": "#825500",
+                        "on-primary-fixed": "#002111",
+                        "on-tertiary-container": "#b6b4b3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Work Sans"],
+                        "headline-md": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Work Sans"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Work Sans"],
+                        "label-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased">
+<!-- TopNavBar -->
+<nav class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md font-['Manrope'] antialiased docked full-width top-0 sticky z-50 border-b border-gray-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-4 md:px-8 h-20 w-full">
+<div class="text-2xl font-black text-emerald-900 dark:text-emerald-50 tracking-tighter">GiraHomes</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-900 dark:text-emerald-400 font-bold border-b-2 border-emerald-900 dark:border-emerald-400 pb-1 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all duration-200" href="#">Listings</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-all duration-200" href="#">Agents</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-all duration-200" href="#">About</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<a class="hidden lg:block text-slate-600 dark:text-slate-400 font-medium hover:text-emerald-700 transition-all" href="#">Login</a>
+<button class="bg-primary text-white px-6 py-3 rounded-xl font-label-md active:scale-95 transform transition-transform shadow-lg shadow-primary/20">
+                    Post a Listing
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="luxury modern architectural villa in Kigali with lush green garden landscape at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRS5bUohnWp3Ro2GqbijM9I1G6U5LT1D2vLdR4XLeYEEBn_lQuziRSoLngk2GwKRSdECxOFAl0lYSLf0ueGwhk4zBgjO0rdIIwwYQrGcG7t_WsuSJRrDD3UZ56Nbj_KXXePA_1i18zD8pFuo6QJa3gfJn7SP1zYO5D5mAoqbjgY1ubJm_w_vliQTxDM_q0j9oWJS66H75YHUHRFwZeZgX0sZixVd_LqN3xaR11xawhl7y-sEKcky8tMVjqsDw2eYT-_YDTVMwz4Ks"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-4 md:px-8 text-center text-white w-full">
+<h1 class="font-display-lg text-display-lg md:text-6xl mb-6">Find Your Dream Home in Kigali</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-12 max-w-2xl mx-auto">Buy, Rent, or Invest in Verified Properties with Rwanda's most trusted real estate platform.</p>
+<!-- Advanced Search Bar -->
+<div class="bg-white/10 backdrop-blur-xl p-4 rounded-3xl border border-white/20 shadow-2xl max-w-4xl mx-auto">
+<div class="bg-white rounded-2xl grid grid-cols-1 md:grid-cols-4 gap-2 p-2">
+<div class="flex items-center px-4 border-r border-gray-100">
+<span class="material-symbols-outlined text-primary mr-2">location_on</span>
+<div class="text-left">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Location</p>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-semibold placeholder:text-slate-400" placeholder="Kigali, Rwanda" type="text"/>
+</div>
+</div>
+<div class="flex items-center px-4 border-r border-gray-100">
+<span class="material-symbols-outlined text-primary mr-2">home</span>
+<div class="text-left">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Type</p>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-semibold">
+<option>Apartment</option>
+<option>Villa</option>
+<option>Office</option>
+</select>
+</div>
+</div>
+<div class="flex items-center px-4 border-r border-gray-100">
+<span class="material-symbols-outlined text-primary mr-2">payments</span>
+<div class="text-left">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Price Range</p>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 text-slate-900 font-semibold">
+<option>$50k - $200k</option>
+<option>$200k - $500k</option>
+<option>$500k+</option>
+</select>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-fixed font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined">search</span>
+                            Search
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Properties -->
+<section class="py-24 max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Featured Properties</h2>
+<p class="font-body-md text-slate-500">Hand-picked premium listings in the heart of the city.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline underline-offset-4" href="#">
+                    View all listings <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:scale-[1.01] transition-all duration-300">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="ultra modern villa architecture with white walls and glass windows in a tropical garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdXtxV6L1J3ggOQx-2snWrESUzP7DDrxsDEmozl9JaFhE3wAY1R-pN_f7GMUcPjXDfM_DG3_7xwW-0_igEQb9FOWfrlngC9Lu_cwZuV2q3BAS6QhaRSbQtkMoQVnpVU12mPm_ZfDbiA1lWdxVEXQS6kt570tcBjuXSC4cqe9nB7OiU8g4hSyxlJCgvEurCoR4AVIYHI6ObB4nrdAIX3TJmirmN6_1EZ_95fYcekVQVuLs-8XylbOVyhsMKvCxXzB8RAlJEsz2ZY9E"/>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-caption font-bold">Featured</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-primary font-display-lg text-xl mb-1">$450,000</p>
+<h3 class="font-headline-md text-lg text-slate-900 mb-2">Hilltop Serenity Villa</h3>
+<p class="flex items-center text-slate-400 text-caption mb-4">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Nyarutarama, Kigali
+                        </p>
+<div class="flex items-center justify-between pt-4 border-t border-gray-50">
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bed</span> 4
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bathtub</span> 3
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">square_foot</span> 320m²
+                            </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:scale-[1.01] transition-all duration-300">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="contemporary minimalist apartment exterior at dusk with warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4P8OUkaxT2SEQyFlo9COrtm8Hbu4uVKUSfKen2Hc4FpuIW3fzW_pX0f-Z8lTRpM-nEp5gBnNLjNzVD-f-aUdovJaEh4RRs3IY5Xh-yhK-yUK65WOFZMSQcWHQ5TxXAD5pVne7YQJP0JaUXdKRqIyFhCC72SGGVLjV0cl60qeWy0ePQFviXA7OX8bAXLJw8SLTGJk8_M8GVNvixLnPDp9-k646CcVkkOk1LiDev4cFO80EFA0MYPRsWitIKJbIQcCWQf1XhrKZ6TY"/>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-caption font-bold">Featured</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-primary font-display-lg text-xl mb-1">$280,000</p>
+<h3 class="font-headline-md text-lg text-slate-900 mb-2">The Emerald Heights</h3>
+<p class="flex items-center text-slate-400 text-caption mb-4">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Kacyiru, Kigali
+                        </p>
+<div class="flex items-center justify-between pt-4 border-t border-gray-50">
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bed</span> 2
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bathtub</span> 2
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">square_foot</span> 145m²
+                            </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:scale-[1.01] transition-all duration-300">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="traditional brick facade house with modern black window frames and manicured lawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoiPjpOf45uLu1PgzGBy7rbz24dnCUmpuRwNYzNlqv-o8rGgEK0PuVNqdb4Vem2_o6kCO22PlEGL_iK4jBHIkY5KOALpasGOvv9Sofu0jYqooOrTLzNLNAR-HFbWrg_CqJZDdTRluKD2_dPhvXTFd6WgqLN0IaM4rfFH0SK_tSHEut7BL1LqLjyqlJQNcHtpMkX2E6P0uNo-d06RSyA6OTlZNiHILtfhtzeMm1LKn51hRRS0Lvxv1RNky7mg8k6siB7atzzH6Vh2Q"/>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-caption font-bold">Featured</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-primary font-display-lg text-xl mb-1">$620,000</p>
+<h3 class="font-headline-md text-lg text-slate-900 mb-2">Rebero Horizon Estate</h3>
+<p class="flex items-center text-slate-400 text-caption mb-4">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Rebero, Kigali
+                        </p>
+<div class="flex items-center justify-between pt-4 border-t border-gray-100">
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bed</span> 5
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bathtub</span> 4
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">square_foot</span> 450m²
+                            </div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:scale-[1.01] transition-all duration-300">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="spacious open plan living room with minimalist scandinavian furniture and large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPCWuohHRw3ic9zIud69i1Ar-Y081dPz-mmdu3ADmQRH4XylyADTMLg0efGk_eiqQE-Lx0_BDeLXMlcN8K0glfxu65ME0t7Sz1ZPTd94VQi4zChSzvhefOvI99StcRjkNfgF0tTP0ofur5aYWiAPWYpopMfB0sDbvnoHwWZXoua740FFto5cUeMQxaxCddfCru1kVIUbcjmwVY7ry2tMCWSoYUU1nb_BMuISpI_G72K77n4zxLe5MA5p6f9I3OPtog43XAv22jcTo"/>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-caption font-bold">Featured</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<p class="text-primary font-display-lg text-xl mb-1">$195,000</p>
+<h3 class="font-headline-md text-lg text-slate-900 mb-2">Urban Loft Living</h3>
+<p class="flex items-center text-slate-400 text-caption mb-4">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Kimihurura, Kigali
+                        </p>
+<div class="flex items-center justify-between pt-4 border-t border-gray-100">
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bed</span> 1
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">bathtub</span> 1
+                            </div>
+<div class="flex items-center gap-1 text-slate-500 text-caption">
+<span class="material-symbols-outlined text-lg">square_foot</span> 85m²
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Developments -->
+<section class="bg-primary py-24">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+<div>
+<h2 class="font-display-lg text-headline-lg text-white mb-2">New Developments</h2>
+<p class="font-body-md text-white/60">Upcoming high-end architectural projects in Rwanda.</p>
+</div>
+<div class="flex gap-4 mt-6 md:mt-0">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 pb-8 hide-scrollbar">
+<!-- Dev 1 -->
+<div class="flex-none w-[350px] md:w-[450px] bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="architectural rendering of a futuristic skyscraper with green vertical gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKyRwRq3rCeP_CDJn8xxSTO5bMxys3iU2UhHYgvQsWU9iK0KpQvmqMsGfiQGDm9D3CuO9Ca6JzMmLzLLIi6qzGC62AW9f9eouOP8CA0rgyqNOIo8RZ06BJUMUrXevaRvymPrDtt3-zWpDxxTXU6D3_lftqhiDPMxYckJsiJ3PF1b-VxLOqyV-5wwyR6flDZHEVxHM87FAdZ-ftiBxqE8xbaAupMJySy4GZmQxRzYUzQ5Yzs-E0vVvNWzHaVuIN7PWVOGgnG7NIh3Y"/>
+</div>
+<div class="p-8">
+<span class="text-secondary-fixed text-caption font-bold uppercase tracking-widest">Pre-Launch</span>
+<h3 class="text-white font-headline-lg text-2xl mt-2 mb-4">Vision Towers II</h3>
+<p class="text-white/60 text-body-md line-clamp-2">Ultra-luxury living in the heart of Kigali's business district with 360° city views.</p>
+</div>
+</div>
+<!-- Dev 2 -->
+<div class="flex-none w-[350px] md:w-[450px] bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="modern luxury apartment complex with clean lines and swimming pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMDc6AcVnrcP6CRaSAAqUWvpJlnOAPH0tg9uItMSsCJ12RuyMIwk0WThkOG6W0jfMLGDlIxwAKDqVrld5N58aQJbwBthmRqj9QdMN2ZK8KUEbvn6d38K6NQGSu9z_ej3-XxpHBLP429s7Fl0w65Ak_D0xEX9s2iZaGW1G83120t80VRpB3fAq-ICCUIyenyTKBiPFudq2hgVCE6F5kx2CgJzUPYylLF4Rh0lbeEKmfcgrJymbZ_t9uzXMUxgVNUMII1nP-hukbdQ"/>
+</div>
+<div class="p-8">
+<span class="text-secondary-fixed text-caption font-bold uppercase tracking-widest">Construction Started</span>
+<h3 class="text-white font-headline-lg text-2xl mt-2 mb-4">Gisenyi Shores</h3>
+<p class="text-white/60 text-body-md line-clamp-2">Exclusive waterfront villas at Lake Kivu designed for the ultimate relaxation.</p>
+</div>
+</div>
+<!-- Dev 3 -->
+<div class="flex-none w-[350px] md:w-[450px] bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="modern eco-friendly housing development with solar panels and natural wood accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeScaIbAFRjfHCvs1cVs6DCIEL_iNKHb3Eu6vhmcDw4tgeESh6YwriwCD15PnlVepGzH8k4N3GA1vVXyZFxODCzHQ3T5KJ2gbshwveAKcEpQA5AyUsTtWn-qEBjyRbkPE3YTsDoo56iNyqFd1jbiUWCI2WqtWR3lZXTNMn9CqG8JwwGygO5CBVGL2uq_gzKB4wu8ZT9t1dwGESAiO2jeI0Y9b74zvqfifGrUAeZHfsJ_GtZxgrdWyK6mYJu-8I5L-1lXUDDkNTR6s"/>
+</div>
+<div class="p-8">
+<span class="text-secondary-fixed text-caption font-bold uppercase tracking-widest">Selling Fast</span>
+<h3 class="text-white font-headline-lg text-2xl mt-2 mb-4">Eco-Vista Village</h3>
+<p class="text-white/60 text-body-md line-clamp-2">Sustainable living community featuring green energy and shared community gardens.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Explore by Area -->
+<section class="py-24 max-w-[1280px] mx-auto px-4 md:px-8">
+<h2 class="font-display-lg text-headline-lg text-primary text-center mb-16">Explore Kigali’s Best Neighborhoods</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Area 1 -->
+<div class="relative group cursor-pointer h-80 rounded-3xl overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="aerial view of an affluent neighborhood with tree-lined streets and modern houses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxkaDzH3LBMQ8EGnrHecBZK_c6LPaGYNYBmfY9rVmqN2jrd524RwW5dqhOZs8r9TW8E3gW0elpS_1pSW2Juubeg7-U24NpElkTnEp4DhctqTbDM65vn1-eTKNQKz5fExvJRXCjeIe6DQZp8JJwVCfKd4ESt7GP7Nq9ZN_XT1TsUq5f8Ig6nSeD-1qwbqEUwKTtklyl4F2BwBOvmzg19oDeChrsZS5DkfuNMFVZgwi2RvuR1h0u10CYEJrXWnBYeRre6tFduAx8zTc"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-white font-headline-lg text-xl">Nyarutarama</h4>
+<p class="text-white/80 text-caption">120+ Listings</p>
+</div>
+</div>
+<!-- Area 2 -->
+<div class="relative group cursor-pointer h-80 rounded-3xl overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="residential area on a lush green hill under a blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCetpxZr_wV-4JyBUJ2lrAUvhYmDmZD71Waj_yF5P8DtWYEEXBWf7z8-gIjCo2MS8RBQqHhHD2jRNx0o7W1DtqZ4WvSyd33qoASF_8Q6YrYQQbmZhAHahUdJ2o2TgtKWYACEdBklUks0jW-a6MBpVfn6Y3ahj816Sjb25nDQ4h6z-gGgT9khpNCJB44IzZr3roc2cmtNHckjnmKtfYBEWZMEdmTa3He11wPiQY1xnYdSleRzhqpdCYo4neR8kACGY7ilMnfEPVQIg0"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-white font-headline-lg text-xl">Rebero</h4>
+<p class="text-white/80 text-caption">85+ Listings</p>
+</div>
+</div>
+<!-- Area 3 -->
+<div class="relative group cursor-pointer h-80 rounded-3xl overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="city skyline viewed from a nearby hill during daytime" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMjMeAeSpoW9IjA9_z2ckNnC67qIzOuV3btgR4oDzx_MD8JXznx_1VbmFXICdyUsJF2DIVbVtZXX0m-38QZTtV4VMt9_gZs50kKS99aGg6Z-pd9W-Wu8iMK_6trBQ0kzIoRjHTISLvdrectNDGgPbOh0RZsLLDL0LLBbS9dZ7BR4MJ2f1ot235i4M8uI02TufV0XrPP4fIuYtMSe36MVxPXdaCeHWWRgWBgyFX4eqi6NIP3mgBmzgmVw_vwMkdNBeRQ0vnviQNw0A"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-white font-headline-lg text-xl">Kacyiru</h4>
+<p class="text-white/80 text-caption">240+ Listings</p>
+</div>
+</div>
+<!-- Area 4 -->
+<div class="relative group cursor-pointer h-80 rounded-3xl overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="vibrant urban area with modern buildings and green landscaping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX-MR7hYGUohM2Xh10AGejYql_cOM_0BU0DBtGk673BKTfHQl9Tr2zr3GR_3Y09InHPov4KeFOYDJ-2G9qCpIRxfbx_SrzKuIZwFwUfgofZsJrKOGRFnZOwzFdNAbIEExrIsXaA46ixb1NHjxUVuMORKqyWeTromkTfVl12FU3kkd-rfY52pvG8xCOSufqaoQm8Yszd7YA9QGYQkQzviClbyVLmW1Qdg7P6kArhp1QCK3RfbnEoVdThrDh-Bz7tyE7fBLRv6phM_I"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-white font-headline-lg text-xl">Kimihurura</h4>
+<p class="text-white/80 text-caption">150+ Listings</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-slate-50">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-display-lg text-headline-lg text-primary mb-4">Why GiraHomes?</h2>
+<p class="font-body-md text-slate-500">We are committed to providing the most transparent and reliable real estate experience in Rwanda.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center p-8 rounded-3xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+<div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary mb-3">Verified Listings</h3>
+<p class="text-slate-500 font-body-md">Every property is physically inspected and document-verified by our specialized team.</p>
+</div>
+<div class="text-center p-8 rounded-3xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+<div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">person_pin</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary mb-3">Trusted Agents</h3>
+<p class="text-slate-500 font-body-md">Connect with licensed real estate professionals who understand the local market dynamics.</p>
+</div>
+<div class="text-center p-8 rounded-3xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+<div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary mb-3">Secure Transactions</h3>
+<p class="text-slate-500 font-body-md">End-to-end encrypted communication and legal advisory for worry-free investments.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="relative bg-primary rounded-[40px] overflow-hidden p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+<img class="w-full h-full object-cover" data-alt="abstract blurred background of high end apartment building windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-V_snytjmtm1GOc57fAxKfzQUa0wCk8sgXCmXlVfQLeQi_wSTjtz6xfz5VduElkckSlb_VUX8Y4XIx01I0qAAtLwzCjIzs7vU1UmvmoDElVtV8UdJNHrV8BYHf8joYGC-jZtetVLoppWSTRMrVy-p2x8VQNSktg97pVLKjxGx7BPQYRM4nRmW69Uogl-bGenDdsPQlLjYx00VLmPT7tX5qx1HHs6n55VenzarGZuzq9-KeROUCBLOxj0sHHBODW5P_HzHT0k4HWM"/>
+</div>
+<div class="relative z-10 max-w-xl text-white">
+<h2 class="font-display-lg text-4xl mb-4">List Your Property Today</h2>
+<p class="text-white/70 text-lg mb-8">Reach thousands of potential buyers and renters looking for their next home in Kigali. Professional photography included.</p>
+<button class="bg-secondary-container text-on-secondary-fixed font-bold px-10 py-5 rounded-2xl hover:scale-105 active:scale-95 transition-all text-lg">
+                        Post a Listing
+                    </button>
+</div>
+<div class="relative z-10 grid grid-cols-2 gap-4">
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 text-white">
+<p class="text-3xl font-bold mb-1">5k+</p>
+<p class="text-white/60 text-caption">Monthly Visitors</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 text-white">
+<p class="text-3xl font-bold mb-1">100+</p>
+<p class="text-white/60 text-caption">Homes Sold</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 mt-auto border-t border-gray-200 dark:border-slate-800">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="col-span-1 lg:col-span-1">
+<div class="text-xl font-bold text-emerald-900 dark:text-emerald-50 mb-6">GiraHomes</div>
+<p class="text-slate-500 font-body-md mb-6">Your premier partner for luxury real estate in the heart of Africa. Modern homes for modern living.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-slate-600 hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-slate-600 hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">groups</span></a>
+<a class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-slate-600 hover:text-primary" href="#"><span class="material-symbols-outlined text-lg">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Listings</a></li>
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Agents</a></li>
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Careers</a></li>
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-emerald-700 underline underline-offset-4 transition-all" href="#">Cookies Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-6">Newsletter</h4>
+<p class="text-slate-500 mb-4">Stay updated with the latest property trends in Kigali.</p>
+<div class="flex">
+<input class="bg-white border border-gray-200 rounded-l-xl px-4 py-3 focus:outline-none focus:border-primary w-full" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white px-4 py-3 rounded-r-xl">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 mt-12 pt-8 border-t border-gray-200">
+<p class="text-slate-500 text-sm">© 2024 GiraHomes Kigali. All rights reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe pt-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-gray-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 rounded-t-2xl h-16">
+<a class="flex flex-col items-center justify-center text-emerald-900 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Manrope'] text-[10px] font-semibold">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-['Manrope'] text-[10px] font-semibold">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-['Manrope'] text-[10px] font-semibold">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] text-[10px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
