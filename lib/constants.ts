@@ -88,7 +88,7 @@ export const NEW_DEVELOPMENTS: Development[] = [
   },
   {
     id: "dev-3",
-    title: "Eco-Vista Village",
+    title: "Eco-Vista Villagee",
     status: "SELLING FAST",
     description: "Sustainable living community featuring green energy and shared community gardens.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDeScaIbAFRjfHCvs1cVs6DCIEL_iNKHb3Eu6vhmcDw4tgeESh6YwriwCD15PnlVepGzH8k4N3GA1vVXyZFxODCzHQ3T5KJ2gbshwveAKcEpQA5AyUsTtWn-qEBjyRbkPE3YTsDoo56iNyqFd1jbiUWCI2WqtWR3lZXTNMn9CqG8JwwGygO5CBVGL2uq_gzKB4wu8ZT9t1dwGESAiO2jeI0Y9b74zvqfifGrUAeZHfsJ_GtZxgrdWyK6mYJu-8I5L-1lXUDDkNTR6s",
